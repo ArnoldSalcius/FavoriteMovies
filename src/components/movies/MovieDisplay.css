@@ -1,0 +1,32 @@
+.movie-card {
+    width: 30%;
+    margin: 0.5em 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-flow:column;
+    border: 5px black solid;
+}
+
+
+.movie-card {
+    font-size: 1vw;
+}
+
+
+.movie-title {
+    height: 3em;
+}
+
+.movie-card > img {
+    max-width: 100%;
+    height: auto;
+}
+
+.backdrop > img {
+    width: 100%;
+}
+
+.favorite{
+    color: black;
+}
