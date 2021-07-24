@@ -1,7 +1,8 @@
 import React from 'react';
-import store from '../redux/store';
 import { Provider } from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
+
+import store from '../redux/store';
 
 import Header from './Header';
 import SearchBar from './SearchBar';
@@ -15,20 +16,14 @@ const App = () => {
             <div className='container'>        
                 <BrowserRouter>
                         <Header />
-
-
-
                         <Route exact path='/'>
                             <SearchBar />
                             <MovieList/>
                         </Route>
-
                         <Route path='/cart' component={Cart} />
-
                 </BrowserRouter>
             </div>
-        </Provider>
-        
+        </Provider>    
     )
 }
 

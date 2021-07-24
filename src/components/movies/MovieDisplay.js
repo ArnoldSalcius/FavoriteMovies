@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
-import {FaStar} from 'react-icons/fa';
-
+import MovieButton from './MovieButton';
 
 import { AddFavoriteMovie } from '../../redux/actions/movies/movieActions';
 import './MovieDisplay.css';
@@ -12,7 +11,7 @@ const IMAGES_URL = 'https://image.tmdb.org/t/p/w500/';
 const UNAVAILABLE_IMG = 'https://icon-library.com/images/image-unavailable-icon/image-unavailable-icon-9.jpg';
 const VISIT_MOVIE_URL = 'https://www.themoviedb.org/movie/';
 
-const MovieDisplay = ({movie, addFavorite, favorites}) => {
+const MovieDisplay = ({movie}) => {
 
     const [isHovered, setIsHovered] = useState(false);
     
@@ -29,7 +28,8 @@ const MovieDisplay = ({movie, addFavorite, favorites}) => {
     const movieVisit = VISIT_MOVIE_URL + movie.id;
 
     //check if movie already in favorites
-    const favoritesMovie = favorites.find((favoriteMovie) => favoriteMovie.id === movie.id);
+    //If in favorites, button should take to favorites, if not, it should add
+    
     
 
 
@@ -57,7 +57,7 @@ const MovieDisplay = ({movie, addFavorite, favorites}) => {
                 </p>
                 <div className='movie-form'>
                     <a rel="noreferrer" target= '_blank' href={movieVisit}className='btn btn-primary'>Visit</a>
-                    <button onClick={() => {addFavorite(movie)}} className='btn btn-primary'><FaStar className={favoritesMovie ? 'favorite' : ''}/></button>
+                    <MovieButton movie ={movie} />
                 </div>
             </div>
             )

@@ -8,13 +8,10 @@ export const storeFavoriteMovies = (movies) => {
 export const retrieveFavoriteMovies = () => {
     const favorites = JSON.parse(window.localStorage.getItem('favorites'));
     return favorites;
-}
-
+};
 
 
 export const loadState = () => {
-  
-
     try{
         const serializedState = localStorage.getItem('favorites');
         if(serializedState === null){

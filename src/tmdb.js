@@ -7,5 +7,4 @@ export default axios.create({
         api_key: process.env.REACT_APP_TMDB_API_KEY,
         include_adult: false
     }
-
-})
+});

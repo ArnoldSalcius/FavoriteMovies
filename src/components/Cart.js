@@ -1,25 +1,26 @@
-import React, { useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {connect} from 'react-redux';
+import './Cart.css';
+import CartDisplay from './CartDisplay';
 
-import { RemoveFavoriteMovie } from '../redux/actions/movies/movieActions';
 
 
+const Cart = ({favorites, location}) => {
 
-const Cart = ({favorites, removeFavorite}) => {
+    const myRef = useRef(null);
 
-    useEffect(() => {
+    const executeScroll = () => {
+        if(myRef.current){
+            return myRef.current.scrollIntoView()
+        }
+    };
 
-    },[]);
+    useEffect(executeScroll, []);
 
 
     const renderItems = favorites.map(movie => {
         return (
-            <div key={movie.id}>
-                <h2>{movie.title}</h2>
-                <button onClick={() => {
-                    removeFavorite(movie.id)
-                }}className='btn btn-danger'>Delete</button>
-            </div>
+            <CartDisplay myRef={myRef} key={movie.id} movie={movie} location={location}/>
         )
     })
 
@@ -37,10 +38,6 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        removeFavorite: (id) => {dispatch(RemoveFavoriteMovie(id))}
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+
+export default connect(mapStateToProps)(Cart);
