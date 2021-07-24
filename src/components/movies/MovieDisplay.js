@@ -15,8 +15,8 @@ const MovieDisplay = ({movie}) => {
 
     const [isHovered, setIsHovered] = useState(false);
     
-    const toggleHovered = () => {
-        setIsHovered(!isHovered);
+    const toggleHovered = (currentHover) => {
+        setIsHovered(currentHover);
     }
 
 
@@ -40,13 +40,13 @@ const MovieDisplay = ({movie}) => {
 
         if(!isHovered){
             return (
-            <div className='movie-card' onMouseEnter={toggleHovered} onMouseLeave={toggleHovered}>
+            <div className='movie-card' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
                 <img alt='Something went wrong...' src = {moviePoster} />
             </div>
             );
         }else{
             return (
-            <div className='movie-card' onMouseEnter={toggleHovered} onMouseLeave={toggleHovered}>
+            <div className='movie-card' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
                 <div className='movie-title'>{movie.title}</div>
                 <div className='backdrop'>
                     <img alt='movie backdrop notimage' src={movieBackdrop} />

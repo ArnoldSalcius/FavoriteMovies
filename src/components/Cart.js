@@ -11,7 +11,7 @@ const Cart = ({favorites, location}) => {
 
     const executeScroll = () => {
         if(myRef.current){
-            return myRef.current.scrollIntoView()
+            return myRef.current.scrollIntoView({block: 'center', behavior: 'smooth'})
         }
     };
 
@@ -20,12 +20,12 @@ const Cart = ({favorites, location}) => {
 
     const renderItems = favorites.map(movie => {
         return (
-            <CartDisplay myRef={myRef} key={movie.id} movie={movie} location={location}/>
+                <CartDisplay  myRef={myRef} key={movie.id} movie={movie} location={location}/>
         )
     })
 
     return (
-        <div>
+        <div className={'cart-container'}>
             {renderItems}
          </div>
     )
