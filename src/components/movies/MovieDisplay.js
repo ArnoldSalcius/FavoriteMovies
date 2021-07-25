@@ -47,7 +47,7 @@ const MovieDisplay = ({movie}) => {
         }else{
             return (
             <div className='movie-card' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
-                <div className='movie-title'>{movie.title}</div>
+                <div className='movie-title'><h2>{movie.title}</h2></div>
                 <div className='backdrop'>
                     <img alt='movie backdrop notimage' src={movieBackdrop} />
                 </div>

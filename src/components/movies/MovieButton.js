@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {FaStar} from 'react-icons/fa';
+import {FaShoppingCart} from 'react-icons/fa'
 
 import { AddFavoriteMovie } from '../../redux/actions/movies/movieActions';
 import { Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ const MovieButton = ({movie, favorites, addFavorite}) => {
         if(favoritesMovie){
             return (
                 <Link className='btn btn-primary' to={{pathname:'/cart', movieId: movie.id}}>
-                    Cart
+                    <FaShoppingCart />
                 </Link>
             )
         }else{

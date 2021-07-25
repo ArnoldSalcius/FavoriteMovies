@@ -1,15 +1,30 @@
 .header {
     position: fixed;
     top: 0;
-    background: grey;
+    background: dodgerblue;
     width: 100%;
+    display: flex;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .header a{
     text-decoration: none;
-    color: white
+    color: white;
+    margin: 2em;
+    font-size: 1.5em;
+    transition: color .25s ease-in-out;
+    cursor: pointer;
+}
+
+
+.header-cart {
+    font-size: 1.25em;
 }
 
 .header a:hover {
     color: black;
+    transition: color .25s ease-in-out;
 }

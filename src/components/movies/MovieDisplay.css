@@ -5,9 +5,14 @@
     display: flex;
     justify-content: space-between;
     flex-flow:column;
-    border: 5px black solid;
+    border: 5px #8c8c8c solid;
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
+.movie-card:hover {
+    border-color: dodgerblue;
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
+}
 
 .movie-card {
     font-size: 1vw;
@@ -29,4 +34,18 @@
 
 .favorite{
     color: black;
+}
+
+.movie-form {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em;
+}
+
+.movie-form a {
+    font-size: 1em;
+}
+
+.movie-card p {
+    margin: 0.5em;
 }
