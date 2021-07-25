@@ -1,5 +1,5 @@
 .highlight{
-    background: gray;
+    background: #8c8c8c;
 }
 
 
@@ -10,4 +10,13 @@
 
 .cart-container{
     margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-title{
+    font-size: 2em;
+}
+.cart-image{
+    max-height: 100%;
 }

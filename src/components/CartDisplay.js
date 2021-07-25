@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { RemoveFavoriteMovie } from '../redux/actions/movies/movieActions';
-import './Cart.css';
-
+import './CartDisplay.css';
+import { IMAGES_URL, UNAVAILABLE_IMG, VISIT_MOVIE_URL } from '../constants';
 
 const CartDisplay = ({movie, removeFavorite, location, myRef}) => {
 
@@ -24,8 +24,10 @@ const CartDisplay = ({movie, removeFavorite, location, myRef}) => {
     },[])
 
     return (
-        <div ref= {ref} className={highlight} key={movie.id}>
-            <h2>{movie.title}</h2>
+        <div  ref= {ref} className={highlight + ' cart-item'} key={movie.id}>
+            <img className='cart-image' src={IMAGES_URL + movie.backdrop_path} />
+
+            <div className='cart-title'>{movie.title}</div>
             <button onClick={() => {removeFavorite(movie.id)}}className='btn btn-danger'>
                 Delete
             </button>

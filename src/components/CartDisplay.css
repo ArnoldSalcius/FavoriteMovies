@@ -1,0 +1,27 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px #8c8c8c solid;
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
+    margin-bottom: 1em;
+    height: 7em;
+}
+
+.cart-item:hover{
+    border: 3px dodgerblue solid;
+    transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
+}
+
+.cart-item button {
+    margin-right: 2em;
+}
+
+
+.cart-title{
+    font-size: 2em;
+}
+
+.cart-image{
+    height: 100%;
+}

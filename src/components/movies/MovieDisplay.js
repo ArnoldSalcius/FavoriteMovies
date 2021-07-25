@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import MovieButton from './MovieButton';
-
 import { AddFavoriteMovie } from '../../redux/actions/movies/movieActions';
 import './MovieDisplay.css';
+import { IMAGES_URL, UNAVAILABLE_IMG, VISIT_MOVIE_URL } from '../../constants';
 
 
 
-const IMAGES_URL = 'https://image.tmdb.org/t/p/w500/';
-const UNAVAILABLE_IMG = 'https://icon-library.com/images/image-unavailable-icon/image-unavailable-icon-9.jpg';
-const VISIT_MOVIE_URL = 'https://www.themoviedb.org/movie/';
 
 const MovieDisplay = ({movie}) => {
 
@@ -40,14 +37,14 @@ const MovieDisplay = ({movie}) => {
 
         if(!isHovered){
             return (
-            <div className='movie-card' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
+            <div className='movie-card gray' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
                 <img alt='Something went wrong...' src = {moviePoster} />
             </div>
             );
         }else{
             return (
             <div className='movie-card' onMouseEnter={() => toggleHovered(true)} onMouseLeave={() => toggleHovered(false)}>
-                <div className='movie-title'><h2>{movie.title}</h2></div>
+                <div className='movie-title'>{movie.title}</div>
                 <div className='backdrop'>
                     <img alt='movie backdrop notimage' src={movieBackdrop} />
                 </div>

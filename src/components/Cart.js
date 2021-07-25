@@ -25,7 +25,7 @@ const Cart = ({favorites, location}) => {
     })
 
     return (
-        <div className={'cart-container'}>
+        <div className='cart-container'>
             {renderItems}
          </div>
     )

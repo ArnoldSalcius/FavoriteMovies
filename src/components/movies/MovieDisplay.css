@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     flex-flow:column;
-    border: 5px #8c8c8c solid;
+    border: 3px #8c8c8c solid;
     transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
@@ -14,18 +14,15 @@
     transition: color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
 }
 
-.movie-card {
-    font-size: 1vw;
-}
 
 
 .movie-title {
     height: 3em;
+    font-size: 1.5em;
 }
 
 .movie-card > img {
     max-width: 100%;
-    height: auto;
 }
 
 .backdrop > img {
@@ -48,4 +45,8 @@
 
 .movie-card p {
     margin: 0.5em;
+}
+
+.gray {
+    background: #8c8c8c;
 }
