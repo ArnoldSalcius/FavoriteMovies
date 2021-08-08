@@ -1,19 +1,19 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {fetchMovies} from '../../redux/actions/movies/movieActions';
+import { connect } from 'react-redux';
+import { fetchMovies } from '../../redux/actions/movies/movieActions';
 import MovieDisplay from './MovieDisplay';
 import './MovieList.css';
 //class component just for practice
 
 class MovieList extends React.Component {
-    
+
 
     //DELETE THIS
-    
 
-    renderMovies(){
+
+    renderMovies() {
         return this.props.movies.map((movie) => {
-            return <MovieDisplay key={movie.id} movie={movie}/>
+            return <MovieDisplay key={movie.id} movie={movie} />
         });
 
     }
@@ -22,10 +22,10 @@ class MovieList extends React.Component {
 
         //Initially fetching popular movies
         this.props.fetchInitial();
-        
+
     }
 
-    render(){
+    render() {
         return (
             <div className='movie-list'>
                 {this.renderMovies()}
@@ -42,7 +42,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchInitial: () => dispatch(fetchMovies('a', 1, true))
+        fetchInitial: () => dispatch(fetchMovies(null, 1, true))
     }
 }
 

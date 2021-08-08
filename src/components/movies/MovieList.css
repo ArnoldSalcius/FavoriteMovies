@@ -1,5 +1,8 @@
-.movie-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 1200px) {
 }

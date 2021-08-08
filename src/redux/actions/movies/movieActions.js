@@ -1,4 +1,4 @@
-import { FETCH_MOVIES_FAILURE, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_REQUEST, ADD_FAVORITE_MOVIE, REMOVE_FAVORITE_MOVIE } from "./movieTypes"
+import { FETCH_MOVIES_FAILURE, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_REQUEST, ADD_FAVORITE_MOVIE, REMOVE_FAVORITE_MOVIE, REMOVE_ALL_FAVORITES } from "./movieTypes"
 import tmdb from "../../../tmdb";
 
 
@@ -39,17 +39,23 @@ export const RemoveFavoriteMovie = (movieID) => {
 }
 
 
-export const fetchMovies = (query, page = 1, initial) => async(dispatch) => {
+export const fetchMovies = (query, page = 1, initial) => async (dispatch) => {
 
     dispatch(fetchMoviesRequest());
     //if initial fetch preload with list with popular movies
     const endpoint = initial ? '/movie/popular' : '/search/movie';
     try {
-        const result = await tmdb.get(endpoint, {params: {query, page}});
+        const result = await tmdb.get(endpoint, { params: { query, page } });
         const movies = result.data.results;
         dispatch(fetchMoviesSuccess(movies));
-    }catch(err){
+    } catch (err) {
         dispatch(fetchMoviesFailure(err.message));
     }
 }
 
+
+export const removeAllFavorites = () => {
+    return {
+        type: REMOVE_ALL_FAVORITES
+    }
+}

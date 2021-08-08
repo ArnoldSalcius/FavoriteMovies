@@ -1,4 +1,4 @@
-import { FETCH_MOVIES_FAILURE, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_REQUEST, ADD_FAVORITE_MOVIE, REMOVE_FAVORITE_MOVIE } from "./movieTypes"
+import { FETCH_MOVIES_FAILURE, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_REQUEST, ADD_FAVORITE_MOVIE, REMOVE_FAVORITE_MOVIE, REMOVE_ALL_FAVORITES } from "./movieTypes"
 
 const initialState = {
     movies: [],
@@ -8,9 +8,9 @@ const initialState = {
 }
 
 
-const movieReducer = (state = initialState, action) =>{
+const movieReducer = (state = initialState, action) => {
 
-    switch(action.type){
+    switch (action.type) {
         case FETCH_MOVIES_REQUEST:
             return {
                 ...state,
@@ -35,7 +35,7 @@ const movieReducer = (state = initialState, action) =>{
 
             // MAYBE return err message to display later **********************************
             const exists = state.favorites.find((movie) => movie.id === action.payload.id);
-            if(exists){
+            if (exists) {
                 return state
             }
 
@@ -43,12 +43,17 @@ const movieReducer = (state = initialState, action) =>{
                 ...state,
                 favorites: [...state.favorites, action.payload]
             }
-            
+
         case REMOVE_FAVORITE_MOVIE:
 
             return {
                 ...state,
                 favorites: state.favorites.filter(movie => movie.id !== action.payload)
+            }
+        case REMOVE_ALL_FAVORITES:
+            return {
+                ...state,
+                favorites: []
             }
         default:
             return state

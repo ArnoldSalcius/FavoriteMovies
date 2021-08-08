@@ -22,6 +22,12 @@
     font-size: 2em;
 }
 
+.cart-title a {
+    text-decoration: none;
+    color: black;
+}
+
 .cart-image{
     height: 100%;
 }
+
