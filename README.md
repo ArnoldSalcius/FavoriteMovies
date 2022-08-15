@@ -3,7 +3,7 @@
 Front end application using React and redux to find and save your favorite movies.
 
 To get started, .env must include your TMDB api key like :
-REACT_APP_TMDB_API_KEY=<your API key>
+REACT_APP_TMDB_API_KEY=`<your TMDB api key (v3)`
 
 ### `npm start`
 
